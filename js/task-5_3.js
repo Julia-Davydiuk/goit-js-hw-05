@@ -9,23 +9,28 @@
 
 class Storage {
     constructor (items) {
-        this._items = items;
+        this.items = items;
     }
     getItems() {
-        return this._items;
+        return this.items;
     }
     addItem(item) {
-        if (this._items.includes(item)) return;
-        this._items.push(item);
+        if (this.items.includes(item)) return;
+        this.items.push(item);
     }
     removeItem(removedItem) {
         const newItems = [];
 
-        for (const item of this._items) {
-            if (item === removedItem) continue;
+        // for (const item of this.items) {
+        //     if (item === removedItem) continue;
+        //     newItems.push(item);
+        //  }
+
+        for (const item of this.items) {
+            if (item !== removedItem) 
             newItems.push(item);
          }
-         this._items = newItems;
+         this.items = newItems;
     }
 };
 
